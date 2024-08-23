@@ -1,13 +1,8 @@
 import * as actionTypes from './actionTypes.ts';
 
-const intialState: any[] = [];
+const intialState: any = [];
 
-interface IAction {
-	type: string;
-	payload: Record<string, any>;
-}
-
-export const reducer = (state = intialState, action: IAction) => {
+const bookReducer = (state = intialState, action: any) => {
 	switch (action.type) {
 		case actionTypes.ADD_BOOK:
 			return [...state, action.payload];
@@ -16,3 +11,5 @@ export const reducer = (state = intialState, action: IAction) => {
 			return state;
 	}
 };
+
+export default bookReducer;
